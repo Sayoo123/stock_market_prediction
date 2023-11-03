@@ -1,0 +1,44 @@
+{% extends "user/uindex.html" %}
+{% block body %}
+
+<style type="text/css">
+
+    tr{
+		padding:6px; border-bottom: 1px solid #ccc;
+	}
+   tr:hover {background-color: #E4E4E5;}
+   tr:nth-child(1)
+{
+  background-color: #6533FF;
+  color:white;
+}
+</style>
+
+
+
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+    <tr>
+      <th >#</th>
+      <th >COMPLAINT ID</th>
+      <th >COMPLAINT</th>
+      <th >REPLY</th>
+      <th >REPLY DATE</th>
+
+      
+    </tr>
+     {% for i in data %}
+    <tr>
+      <th>{{loop.index}}</th>
+      <th>&nbsp;{{i['c_id']}}</th>
+      <th>&nbsp;{{i['complaints']}}</th>
+      <th>&nbsp;{{ i['reply'] }}&nbsp;</th>
+      <th>&nbsp;{{i['r_date']}}</th>
+
+      
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "user/uindex.html" %}
+{% block body %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+  <style type="text/css">
+
+    tr{
+		padding:6px; border-bottom: 1px solid #ccc;
+	}
+   tr:hover {background-color: #E4E4E5;}
+   /*tr:nth-child(1)*/
+/*{*/
+  /*color:white;*/
+/*}*/
+  </style>
+</head>
+
+<body>
+
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-borderless">
+    <tr>
+      <td >Username</td>
+      <td>{{ data['user_name']}}</td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td>{{ data['dob']}}</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>{{ data['phone']}}</td>
+    </tr>
+    <tr>
+      <td >E-mail</td>
+       <td>{{ data['email']}}</td>
+    </tr>
+
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "admin/index.html" %}
+{% block body %}
+
+<style type="text/css">
+
+    tr{
+		padding:6px; border-bottom: 1px solid #ccc;
+	}
+   tr:hover {background-color: #E4E4E5;}
+   tr:nth-child(1)
+{
+  background-color: #6533FF;
+  color:white;
+}
+</style>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+
+    <tr>
+
+      <th  align="center" >SL.NO</th>
+      <th align="center">NAME</th>
+      <th align="center">PHONE</th>
+      <th  align="center">FEEDBACK</th>
+      <th  align="center">DATE</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <th>{{loop.index}}</th>
+      <th>{{i['user_name']}}</th>
+      <th>{{i['phone']}} </th>
+      <th>{{i['feedback']}}&nbsp;</th>
+      <th>{{i['f_date']}}&nbsp;</th>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+
+{% endblock %}

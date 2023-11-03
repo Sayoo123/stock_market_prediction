@@ -1,0 +1,17 @@
+
+{% extends "admin/index.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table align="center" class="table table-borderless">
+    <tr>
+
+<!--      <td>Reply</td>-->
+      <td><textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2"><input type="submit" name="button" id="button" value="send" class="btn btn-success " /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

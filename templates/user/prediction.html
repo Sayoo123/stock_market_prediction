@@ -1,0 +1,45 @@
+{% extends "user/uindex.html" %}
+{% block body %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    <table class="table table-borderless" align="center">
+        <tr>
+            <th><input type="text" name="t1" placeholder="Open" required class="form-control"></th>
+        </tr>
+        <tr>
+            <th><input type="text" name="t2" placeholder="High" required class="form-control"></th>
+        </tr><tr>
+        <th><input type="text" name="t3" placeholder="Low" required class="form-control"></th></tr>
+        <tr><th><input type="text" name="t4" placeholder="Close" required class="form-control"></th></tr>
+        <tr>
+            <th><input type="text" name="t5" placeholder="Volume" required class="form-control"></th>
+        </tr>
+        <tr>
+            <!--<th></th>-->
+            <th><input type="submit" name="t5" value="Predict" class="btn btn-success" ></th>
+
+        </tr>
+    </table>
+    {% if d4=="1" %}
+    <table>
+        <tr>
+            <th>The next day prediction using Randon Forest is {% if d1|string == '[0.]' %} Down {% else %}Up{% endif %}</th></tr>
+        <tr>
+            <th>The next day prediction using Desicitio Tree is  {% if d2|string == '[0.]' %} Down {% else %}Up{% endif %} </th></tr>
+        <tr>
+            <th>The next day prediction using LSTM is {% if d3|string == '[0.]' %} Down {% else %}Up{% endif %}</th>
+        </tr>
+    </table>
+    {% endif %}
+</form>
+</body>
+
+</html>
+
+{% endblock %}
